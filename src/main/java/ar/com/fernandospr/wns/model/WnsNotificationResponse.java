@@ -26,13 +26,13 @@ public class WnsNotificationResponse {
 	 */
 	public final String notificationStatus;
 	
-	public WnsNotificationResponse(String channelUri, int responseCode, MultivaluedMap<String, String> headers) {
+	public WnsNotificationResponse(String channelUri, int responseCode, MultivaluedMap<String, Object> headers) {
 		this.channelUri = channelUri;
 		this.code = responseCode;
-		this.debugTrace = headers.get("X-WNS-Debug-Trace") != null ? headers.get("X-WNS-Debug-Trace").get(0) : null;
-		this.deviceConnectionStatus = headers.get("X-WNS-DeviceConnectionStatus") != null ? headers.get("X-WNS-DeviceConnectionStatus").get(0) : null;
-		this.errorDescription = headers.get("X-WNS-Error-Description") != null ? headers.get("X-WNS-Error-Description").get(0) : null;
-		this.msgID = headers.get("X-WNS-Msg-ID") != null ? headers.get("X-WNS-Msg-ID").get(0) : null;
-		this.notificationStatus = headers.get("X-WNS-NotificationStatus") != null ? headers.get("X-WNS-NotificationStatus").get(0) : null;
+		this.debugTrace = headers.get("X-WNS-Debug-Trace") != null ? headers.get("X-WNS-Debug-Trace").get(0).toString() : null;
+		this.deviceConnectionStatus = headers.get("X-WNS-DeviceConnectionStatus") != null ? headers.get("X-WNS-DeviceConnectionStatus").get(0).toString() : null;
+		this.errorDescription = headers.get("X-WNS-Error-Description") != null ? headers.get("X-WNS-Error-Description").get(0).toString() : null;
+		this.msgID = headers.get("X-WNS-Msg-ID") != null ? headers.get("X-WNS-Msg-ID").get(0).toString() : null;
+		this.notificationStatus = headers.get("X-WNS-NotificationStatus") != null ? headers.get("X-WNS-NotificationStatus").get(0).toString() : null;
 	}
 }
