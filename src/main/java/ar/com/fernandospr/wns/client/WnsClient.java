@@ -113,7 +113,7 @@ public class WnsClient {
             throw new WnsException("Authentication failed. HTTP error code: " + response.getStatus());
         }
 
-        this.token = (WnsOAuthToken)response.getEntity();
+        this.token = response.readEntity(WnsOAuthToken.class);
     }
 	
 	/**
@@ -131,7 +131,7 @@ public class WnsClient {
 
         Response response = webResourceBuilder.buildPost(Entity.entity(resourceBuilder.getEntityToSendWithNotification(notification), type)).invoke();
 
-        WnsNotificationResponse notificationResponse = new WnsNotificationResponse(channelUri, response.getStatus(), response.getMetadata()    );
+        WnsNotificationResponse notificationResponse = new WnsNotificationResponse(channelUri, response.getStatus(), response.getStringHeaders()    );
 		if (notificationResponse.code == 200) {
 			return notificationResponse;
 		}

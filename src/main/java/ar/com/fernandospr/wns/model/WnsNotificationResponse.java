@@ -25,8 +25,8 @@ public class WnsNotificationResponse {
 	 * Should be any of {@link ar.com.fernandospr.wns.model.types.WnsNotificationStatusType}
 	 */
 	public final String notificationStatus;
-	
-	public WnsNotificationResponse(String channelUri, int responseCode, MultivaluedMap<String, Object> headers) {
+	public WnsNotificationResponse(String channelUri, int responseCode, MultivaluedMap<String, String> headers) {
+
 		this.channelUri = channelUri;
 		this.code = responseCode;
 		this.debugTrace = headers.get("X-WNS-Debug-Trace") != null ? headers.get("X-WNS-Debug-Trace").get(0).toString() : null;
