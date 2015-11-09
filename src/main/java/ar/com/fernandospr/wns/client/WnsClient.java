@@ -6,7 +6,6 @@ import java.util.List;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.MultivaluedMap;
 
-import org.codehaus.jackson.jaxrs.JacksonJsonProvider;
 
 import ar.com.fernandospr.wns.exceptions.WnsException;
 import ar.com.fernandospr.wns.model.WnsAbstractNotification;
@@ -14,6 +13,7 @@ import ar.com.fernandospr.wns.model.WnsNotificationRequestOptional;
 import ar.com.fernandospr.wns.model.WnsNotificationResponse;
 import ar.com.fernandospr.wns.model.WnsOAuthToken;
 
+import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
