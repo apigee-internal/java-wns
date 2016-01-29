@@ -14,7 +14,7 @@
     <name>java-wns</name>
     <description>Library to send notifications using WNS</description>
     <url>https://github.com/apigee/java-wns</url>
-    <version>1.0.0</version>
+    <version>1.2</version>
 
     <packaging>jar</packaging>
 
